@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Temperature Converter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-unit="C">
+<main class="card" aria-labelledby="t">
+  <section class="top">
+    <h1 class="title" id="t">Temperature</h1>
+    <div class="row">
+      <div class="field">
+        <label for="value">Enter a value</label>
+        <input id="value" type="text" inputmode="decimal" autocomplete="off" placeholder="0" aria-describedby="err">
+      </div>
+      <div class="unit-wrap">
+        <label for="unit">From</label>
+        <select id="unit">
+          <option value="C">Celsius (°C)</option>
+          <option value="F">Fahrenheit (°F)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+      </div>
+    </div>
+    <div class="error" id="err" role="alert"></div>
+  </section>
+
+  <button class="swap" id="swap" type="button" aria-label="Swap input unit with the first result" title="Swap units">⇅</button>
+
+  <section class="bottom" aria-live="polite">
+    <div class="out"><span class="num empty" id="n1">–</span><span class="lbl" id="l1">°F</span><button class="copy" id="c1" type="button" aria-label="Copy first result" disabled>Copy</button></div>
+    <div class="out"><span class="num empty" id="n2">–</span><span class="lbl" id="l2">K</span><button class="copy" id="c2" type="button" aria-label="Copy second result" disabled>Copy</button></div>
+    <button class="convert" id="convert" type="button">Convert</button>
+    <p class="note" id="note">Type a number, then press Convert.</p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
